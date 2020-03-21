@@ -1,8 +1,9 @@
 # vnhistory
 
-# Des
+# Description
 @author: nguyenhung
-@des: this is for test.
+@language: Js (react)
+@description:
 
-# UI
-Use Native base UI https://nativebase.io/
+# Web UI
+@Theme: Antd (4.0.3)
