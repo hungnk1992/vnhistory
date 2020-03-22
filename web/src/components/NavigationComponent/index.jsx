@@ -32,7 +32,7 @@ class NavigationComponent extends Component {
       icon: <HomeOutlined />,
     },
     {
-      name: SCREEN.HOME,
+      name: SCREEN.ABOUT,
       link: '/about',
       component: <About />,
       icon: <ProfileOutlined />,
