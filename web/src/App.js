@@ -1,14 +1,15 @@
 import React, { Component } from 'react';
 import './App.css';
 import { withTranslation } from 'react-i18next';
-import Home from './containers/Home';
+import NavigationComponent from './components/NavigationComponent';
 
-class App extends React.Component {
+class App extends Component {
+
   render (){
     return (
       <div className="App">
         <header className="App-header">
-          <Home str="test" />
+          <NavigationComponent />
         </header>
       </div>
     );

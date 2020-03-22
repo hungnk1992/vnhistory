@@ -1,5 +1,6 @@
 export default {
     translation: {
-        "test" : "test st"
+        "screen.home" : "Home Screen",
+        "screen.about" : "About Screen",
     }
 }
