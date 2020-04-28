@@ -6,9 +6,10 @@ import * as serviceWorker from './serviceWorker';
 import i18n from './i18n';
 import { I18nextProvider } from "react-i18next";
 import { Provider } from "mobx-react";
+import RootStore from "./store/RootStore";
 
 ReactDOM.render(
-  <Provider>
+  <Provider rootStore={new RootStore()}>
     <I18nextProvider i18n={i18n}>
       <App />
     </I18nextProvider>
