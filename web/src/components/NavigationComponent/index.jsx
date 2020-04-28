@@ -21,13 +21,6 @@ import './index.css';
 const { Header, Content, Footer } = Layout;
 
 class NavigationComponent extends Component {
-  constructor (props){
-    super(props);
-    this.state = {
-      selectedMenu: SCREEN.HOME,
-    }
-  }
-
   routes = [
     {
       name: SCREEN.HOME,
@@ -50,11 +43,18 @@ class NavigationComponent extends Component {
   };
   
   render (){
+    let selectedMenu = "";
+    this.routes.forEach((route)=>{
+      if (route.link === window.location.pathname){
+        selectedMenu = route.name;
+      }
+    });
+
     return (
       <Layout className="layout">
         <Router>
           <Header>
-              <Menu theme="dark" mode="horizontal" onClick={this.onSelectedMenu} selectedKeys={[this.state?.selectedMenu]} style={{ lineHeight: '64px' }}>
+              <Menu theme="dark" mode="horizontal" onClick={this.onSelectedMenu} selectedKeys={selectedMenu} style={{ lineHeight: '64px' }}>
                 { this.routes.map((route) => {
                     return <Menu.Item key={route.name}>{route.icon}{<Link to={route.link}>{route.name}</Link>}</Menu.Item>
                   })
