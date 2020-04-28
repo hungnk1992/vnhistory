@@ -15,10 +15,10 @@ import {
   ProfileOutlined,
 } from '@ant-design/icons';
 
-import { Layout, Menu, Breadcrumb } from 'antd';
-import './index.css';
+import { Layout, Menu } from 'antd';
+import './index.scss';
 
-const { Header, Content, Footer } = Layout;
+const { Content, Footer } = Layout;
 
 class NavigationComponent extends Component {
   routes = [
@@ -51,25 +51,24 @@ class NavigationComponent extends Component {
     });
 
     return (
-      <Layout className="layout">
+      <Layout style={{backgroundColor: '#ffffff'}}>
         <Router>
-          <Header>
-              <Menu theme="dark" mode="horizontal" onClick={this.onSelectedMenu} selectedKeys={selectedMenu} style={{ lineHeight: '64px' }}>
-                { this.routes.map((route) => {
-                    return <Menu.Item key={route.name}>{route.icon}{<Link to={route.link}>{route.name}</Link>}</Menu.Item>
-                  })
-                }
-              </Menu>
-          </Header>
-          <Content style={{ padding: '0 50px' }}>
-            <Breadcrumb style={{ margin: '16px 0' }}>
-              {/* <Breadcrumb.Item>Home</Breadcrumb.Item>
-              <Breadcrumb.Item>List</Breadcrumb.Item>
-              <Breadcrumb.Item>App</Breadcrumb.Item> */}
-            </Breadcrumb>
+          <div className="container-header">
+            <div className="main-header">
+              <p className="primary">Minimalist Lifestyle</p>
+              <p className="secondary">Minimalist Lifestyle Minimalist Lifestyle</p>
+            </div>
+          </div>
+          <Menu mode="horizontal" onClick={this.onSelectedMenu} selectedKeys={selectedMenu}>
+            { this.routes.map((route) => {
+                return <Menu.Item key={route.name}>{route.icon}{<Link to={route.link}>{route.name}</Link>}</Menu.Item>
+              })
+            }
+          </Menu>
+          <Content>
             <Switch> { this.routes.map ((route) => {
-                  return <Route key={route.name} exact path={route.link}>{route.component}</Route>
-                  })}
+              return <Route key={route.name} exact path={route.link}>{route.component}</Route>
+              })}
             </Switch>
           </Content>
           <Footer style={{ textAlign: 'center' }}>

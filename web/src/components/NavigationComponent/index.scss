@@ -1,0 +1,36 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@1,700&display=swap');
+#components-layout-demo-top .logo {
+    width: 120px;
+    height: 31px;
+    background: #333;
+    border-radius: 6px;
+    margin: 16px 24px 16px 0;
+    float: left;
+}
+
+.main-content{
+    background: '#fff';
+    padding: 24; 
+    min-height: 280;
+}
+.layout{
+    background-color: white;
+}
+
+.container-header{
+    .main-header{
+        .primary, .secondary{
+            font-family: 'Alegreya', serif;
+        }
+        
+        .primary{
+            font-size: 50px;
+            margin-bottom: 0;
+            padding-top: 10px;
+        }
+        .secondary{
+            font-size: 20px;
+        }
+    }
+}
