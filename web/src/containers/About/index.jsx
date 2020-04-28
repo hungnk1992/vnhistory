@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 import { withTranslation } from 'react-i18next';
 import HeaderInformation from './components/HeaderInformation'
+import { observer, inject } from 'mobx-react'
 
-
+@inject('rootStore')
+@observer
 class About extends Component {
   renderHeaderInformation (){
-    return <HeaderInformation />
+    return <HeaderInformation userInfo={this.props.rootStore.aboutStore.userInfo} />
   }
 
   renderCommonInformation (){
@@ -30,6 +32,10 @@ class About extends Component {
 
   renderOthers (){
     return <h2>others</h2>
+  }
+
+  componentDidMount = () => {
+    this.props.rootStore.aboutStore.getAdminInfo();
   }
 
   render (){
