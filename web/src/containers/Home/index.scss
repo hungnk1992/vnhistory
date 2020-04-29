@@ -1,0 +1,23 @@
+
+.ant-layout-content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .home-content{
+        width: 90%;
+        .additional-info{
+            text-align: right;
+            padding-top: 80px;
+        }
+
+        .home-content-main{
+            .content{
+                text-align: justify;
+            }
+        }
+
+        .home-right-sidebar{
+            padding-top: 8px;
+        }
+    }
+}
